@@ -1,0 +1,17 @@
+aniso8601==1.2.0
+cffi==1.14.0
+Click==7.0
+cryptography==2.8
+Flask==0.12.1
+Flask-Ask==0.9.8
+itsdangerous==1.1.0
+Jetson.GPIO==2.0.4
+Jinja2==2.11.1
+MarkupSafe==1.1.1
+pycparser==2.19
+pyOpenSSL==17.0.0
+python-dateutil==2.8.1
+PyYAML==3.12
+RPi.GPIO==0.7.0
+six==1.11.0
+Werkzeug==1.0.0
