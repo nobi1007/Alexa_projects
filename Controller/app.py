@@ -23,25 +23,25 @@ def description(aboutVals):
         response = query["invalidDescription"]
     return question(response)
 
-@ask.intent("linearMovement",convert={'directionL':str})
-def frontBackMovement(directionL):
-    if directionL == "forward":
-        response = query["linearMovementForward"]
-    elif directionL == "backward":
-        response = query["linearMovementBackward"]
+@ask.intent("movementIntent",convert={'direction':str})
+def frontBackMovement(direction):
+    if direction == "forward" or direction == "backward":
+        response = query["movementLinear"].format(direction)
+    elif direction == "left" or direction == "right":
+        response = query["movementSide"].format(direction)
     else:
         response = query["invalidMovement"]
     return(question(response))
 
-@ask.intent("sideMovement",convert={'directionS':str})
-def leftRightMovement(directionS):
-    if directionS == "left":
-        response = query["sideMovementLeft"]
-    elif directionS == "right":
-        response = query["sideMovementRight"]
-    else:
-        response = query["invalidMovement"]
-    return(question(response))
+# @ask.intent("sideMovement",convert={'directionS':str})
+# def leftRightMovement(directionS):
+#     if directionS == "left":
+#         response = query["sideMovementLeft"]
+#     elif directionS == "right":
+#         response = query["sideMovementRight"]
+#     else:
+#         response = query["invalidMovement"]
+#     return(question(response))
 
 @ask.intent("AMAZON.HelpIntent")
 def help():
@@ -51,7 +51,7 @@ def help():
 @ask.intent("AMAZON.StopIntent")
 def stop():
     response = query["stop"]
-    return(question(response))
+    return(statement(response))
 
 @ask.intent("AMAZON.FallbackIntent")
 def fallback():
