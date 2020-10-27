@@ -1,7 +1,7 @@
 aniso8601==1.2.0
 cffi==1.14.0
 Click==7.0
-cryptography==2.8
+cryptography==3.2
 Flask==0.12.1
 Flask-Ask==0.9.8
 itsdangerous==1.1.0
